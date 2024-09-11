@@ -1,4 +1,4 @@
-variable "config" {
+variable "configs" {
   description = "configuration for public ip's"
   type        = any
 }

@@ -23,15 +23,16 @@ module "public_ip" {
 
   naming = local.naming
 
-  config = {
-    name           = module.naming.public_ip.name
-    location       = module.rg.groups.demo.location
-    resource_group = module.rg.groups.demo.name
-    zones          = ["1", "2", "3"]
+  resource_group = module.rg.groups.demo.name
+  location       = module.rg.groups.demo.location
 
-    prefix = {
-      prefix_length = 28
-      zones         = ["1", "2", "3"]
+  configs = {
+    pub = {
+      name  = module.naming.public_ip.name
+      zones = ["1", "2", "3"]
+      prefix = {
+        prefix_length = 31 # 2 ip's
+      }
     }
   }
 }
