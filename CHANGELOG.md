@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v1.0.0...v1.1.0) (2024-09-11)
+
+
+### Features
+
+* add support for multiple public ip's ([#4](https://github.com/CloudNationHQ/terraform-azure-pip/issues/4)) ([4a608c6](https://github.com/CloudNationHQ/terraform-azure-pip/commit/4a608c65b5e6b27fb4713c7aa7df50c373413b0d))
+
 ## 1.0.0 (2024-09-11)
 
 
