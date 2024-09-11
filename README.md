@@ -24,8 +24,9 @@ End-to-end testing is not conducted on these modules, as they are individual com
 
 ## Features
 
-- supports configuring prefixes for efficient management of multiple public ip addresses.
+- supports configuring prefixes.
 - Utilization of terratest for robust validation.
+- supports multiple public ip addresses
 
 ## Requirements
 
@@ -51,7 +52,7 @@ End-to-end testing is not conducted on these modules, as they are individual com
 
 | Name | Description | Type | Required |
 | :-- | :-- | :-- | :-- |
-| `config` | configuration for public ip's | object | yes |
+| `configs` | configuration for public ip's | object | yes |
 | `naming` | used for naming purposes | string | yes |
 | `location` | default azure region tho be used | string | no |
 | `resource_group` | default resource group to be used | string | no |
