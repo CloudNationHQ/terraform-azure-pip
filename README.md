@@ -24,7 +24,7 @@ End-to-end testing is not conducted on these modules, as they are individual com
 
 ## Features
 
-- supports configuring prefixes for efficient management of multiple public ip addresses.
+- supports configuring prefixes.
 - Utilization of terratest for robust validation.
 - supports multiple public ip addresses
 
