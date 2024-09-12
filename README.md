@@ -62,7 +62,7 @@ End-to-end testing is not conducted on these modules, as they are individual com
 
 | Name | Description |
 | :-- | :-- |
-| `config` | configuration for public ip's |
+| `configs` | configuration for public ip's |
 | `prefix` | configuration for public ip prefix |
 
 ## Testing
