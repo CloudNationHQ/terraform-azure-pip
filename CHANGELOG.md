@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v1.1.0...v1.1.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* change output name to be plural ([#6](https://github.com/CloudNationHQ/terraform-azure-pip/issues/6)) ([c8d8397](https://github.com/CloudNationHQ/terraform-azure-pip/commit/c8d839764cfb9b49168733ef490b3462cecfa08b))
+
 ## [1.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v1.0.0...v1.1.0) (2024-09-11)
 
 
