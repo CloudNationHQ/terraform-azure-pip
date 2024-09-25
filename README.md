@@ -33,13 +33,13 @@ End-to-end testing is not conducted on these modules, as they are individual com
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.61 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.3 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.114 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 4.3 |
 
 ## Resources
 
@@ -103,4 +103,3 @@ MIT Licensed. See [LICENSE](./LICENSE) for full details.
 
 - [Documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses)
 - [Rest Api](https://learn.microsoft.com/en-us/rest/api/virtualnetwork/public-ip-addresses)
-
