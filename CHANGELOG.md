@@ -5,11 +5,15 @@
 
 ### ⚠ BREAKING CHANGES
 
-* * Version 4 of the azurerm provider includes breaking changes.
+* Version 4 of the azurerm provider includes breaking changes.
 
 ### Features
 
 * upgrade azurerm provider to v4 ([#8](https://github.com/CloudNationHQ/terraform-azure-pip/issues/8)) ([60a466f](https://github.com/CloudNationHQ/terraform-azure-pip/commit/60a466fc94d353d9a7e0fab601e7176ac6e52469))
+
+### Upgrade from v1.1.1 to v2.0.0:
+
+- Update module reference to: `version = "~> 2.0"`
 
 ## [1.1.1](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v1.1.0...v1.1.1) (2024-09-12)
 
