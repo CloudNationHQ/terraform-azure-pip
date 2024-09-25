@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.0.0...v2.0.1) (2024-09-25)
+
+
+### Bug Fixes
+
+* added additional optional config for public ip ([#10](https://github.com/CloudNationHQ/terraform-azure-pip/issues/10)) ([3250c84](https://github.com/CloudNationHQ/terraform-azure-pip/commit/3250c84e0f52ccdc7102cd877245492e3ed7e689))
+
 ## [2.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v1.1.1...v2.0.0) (2024-09-25)
 
 
