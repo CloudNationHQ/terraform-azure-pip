@@ -31,7 +31,7 @@ End-to-end testing is not conducted on these modules, as they are individual com
  <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-| Name | Versions |
+| Names | Verssion |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.0 |
@@ -48,13 +48,14 @@ No modules.
 
 ## Resources
 
-| Name | Type |
+| Name | Types |
 |------|------|
+| [azurerm_public_ip.public](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) | resource |
 | [azurerm_public_ip_prefix.prefix](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip_prefix) | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
+| Name | Descsription | Tsype | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_configs"></a> [configs](#input\_configs) | configuration for public ip's | `any` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | default azure region to be used. | `string` | `null` | no |
