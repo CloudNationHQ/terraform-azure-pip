@@ -31,7 +31,7 @@ End-to-end testing is not conducted on these modules, as they are individual com
  <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-| Name | Version |
+| Name | Versions |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.0 |
@@ -50,7 +50,6 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_public_ip.public](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) | resource |
 | [azurerm_public_ip_prefix.prefix](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip_prefix) | resource |
 
 ## Inputs
