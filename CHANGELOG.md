@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.0.1...v2.1.0) (2024-10-11)
+
+
+### Features
+
+* auto generated docs and refine makefile ([#14](https://github.com/CloudNationHQ/terraform-azure-pip/issues/14)) ([5674115](https://github.com/CloudNationHQ/terraform-azure-pip/commit/5674115fd6240468addfb321f3587b1c1b32732a))
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#13](https://github.com/CloudNationHQ/terraform-azure-pip/issues/13)) ([6c81982](https://github.com/CloudNationHQ/terraform-azure-pip/commit/6c81982db2a4ea50fa4fc781c2a9b1fdd81dade6))
+
 ## [2.0.1](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.0.0...v2.0.1) (2024-09-25)
 
 
