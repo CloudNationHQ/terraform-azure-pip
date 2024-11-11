@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.1.0...v2.2.0) (2024-11-11)
+
+
+### Features
+
+* enhance testing with sequential, parallel modes and flags for exceptions and skip-destroy ([#16](https://github.com/CloudNationHQ/terraform-azure-pip/issues/16)) ([9bf7543](https://github.com/CloudNationHQ/terraform-azure-pip/commit/9bf75431fb59f4b77758b3c18bdd9616980e5d5c))
+
 ## [2.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.0.1...v2.1.0) (2024-10-11)
 
 
