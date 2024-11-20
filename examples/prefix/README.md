@@ -5,7 +5,7 @@ This deploys an IP prefix associated with the public ip.
 ## Types
 
 ```hcl
-config = object({
+config = map(object({
   name           = string
   location       = string
   resource_group = string
@@ -14,7 +14,7 @@ config = object({
     prefix_length = optional(number)
     zones         = optional(list(string))
   }))
-})
+}))
 ```
 
 ## Notes

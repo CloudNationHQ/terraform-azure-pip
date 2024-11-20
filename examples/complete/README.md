@@ -5,7 +5,7 @@ This example highlights the complete usage.
 ## Types
 
 ```hcl
-config = object({
+config = map(object({
   name                    = string
   location                = string
   resource_group          = string
@@ -18,5 +18,5 @@ config = object({
   idle_timeout_in_minutes = optional(number)
   domain_name_label       = optional(string)
   ip_tags                 = optional(map(string))
-})
+}))
 ```
