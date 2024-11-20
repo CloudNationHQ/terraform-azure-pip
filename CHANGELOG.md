@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.2.0...v2.2.1) (2024-11-20)
+
+
+### Bug Fixes
+
+* update types with map ([#18](https://github.com/CloudNationHQ/terraform-azure-pip/issues/18)) ([b7c91cd](https://github.com/CloudNationHQ/terraform-azure-pip/commit/b7c91cd9ec447ab2b5f61f039f74319e8828c8c4))
+
 ## [2.2.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.1.0...v2.2.0) (2024-11-11)
 
 
