@@ -7,6 +7,7 @@ resource "azurerm_public_ip" "public" {
   location                = coalesce(lookup(each.value, "location", null), var.location)
   allocation_method       = try(each.value.allocation_method, "Static")
   sku                     = try(each.value.sku, "Standard")
+  domain_name_label_scope = try(each.value.domain_name_label_scope, null)
   public_ip_prefix_id     = lookup(each.value, "prefix", null) != null ? azurerm_public_ip_prefix.prefix[each.key].id : null
   zones                   = try(each.value.zones, null)
   ddos_protection_mode    = try(each.value.ddos_protection_mode, "VirtualNetworkInherited")
@@ -31,6 +32,7 @@ resource "azurerm_public_ip_prefix" "prefix" {
   location            = coalesce(lookup(each.value, "location", null), var.location)
   prefix_length       = each.value.prefix_length
   sku                 = try(each.value.sku, "Standard")
+  sku_tier            = try(each.value.sku_tier, "Regional")
   ip_version          = try(each.value.ip_version, "IPv4")
   zones               = try(each.value.zones, var.configs[each.key].zones)
   tags                = try(var.tags, {})
