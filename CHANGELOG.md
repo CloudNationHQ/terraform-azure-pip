@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.4.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.3.0...v2.4.0) (2025-01-20)
+
+
+### Features
+
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#23](https://github.com/CloudNationHQ/terraform-azure-pip/issues/23)) ([a9c4b14](https://github.com/CloudNationHQ/terraform-azure-pip/commit/a9c4b140afe11e85b41af30abbb0ed36c9d77dce))
+* **deps:** bump golang.org/x/crypto from 0.29.0 to 0.31.0 in /tests ([#26](https://github.com/CloudNationHQ/terraform-azure-pip/issues/26)) ([eaa64a3](https://github.com/CloudNationHQ/terraform-azure-pip/commit/eaa64a38967cd77bf5817a6940e38ba4418e6938))
+* **deps:** bump golang.org/x/net from 0.31.0 to 0.33.0 in /tests ([#27](https://github.com/CloudNationHQ/terraform-azure-pip/issues/27)) ([068a8c5](https://github.com/CloudNationHQ/terraform-azure-pip/commit/068a8c5732a353ecb0e87b41b062c7b508e5757e))
+* remove temporary files when deployment tests fails ([#24](https://github.com/CloudNationHQ/terraform-azure-pip/issues/24)) ([e8161ed](https://github.com/CloudNationHQ/terraform-azure-pip/commit/e8161ed448e9d16e9ba84dc0f30c30ba274c708e))
+
 ## [2.3.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.2.1...v2.3.0) (2024-11-22)
 
 
