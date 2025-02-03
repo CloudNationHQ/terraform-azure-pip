@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.4.0...v2.5.0) (2025-02-03)
+
+
+### Features
+
+* add ip_tags support ([#29](https://github.com/CloudNationHQ/terraform-azure-pip/issues/29)) ([928771a](https://github.com/CloudNationHQ/terraform-azure-pip/commit/928771ace285840cc6d472d31c6454c822ac6849))
+
 ## [2.4.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.3.0...v2.4.0) (2025-01-20)
 
 
