@@ -18,7 +18,14 @@ resource "azurerm_public_ip" "public" {
   reverse_fqdn            = try(each.value.reverse_fqdn, null)
   sku_tier                = try(each.value.sku_tier, "Regional")
   ip_version              = try(each.value.ip_version, "IPv4")
-  tags                    = try(var.tags, {})
+
+  ip_tags = try(
+    each.value.ip_tags, {}
+  )
+
+  tags = try(
+    var.tags, {}
+  )
 }
 
 resource "azurerm_public_ip_prefix" "prefix" {
