@@ -93,7 +93,7 @@ For more information, please see our contribution [guidelines](./CONTRIBUTING.md
 
 MIT Licensed. See [LICENSE](./LICENSE) for full details.
 
-## Reference
+## References
 
 - [Documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses)
 - [Rest Api](https://learn.microsoft.com/en-us/rest/api/virtualnetwork/public-ip-addresses)
