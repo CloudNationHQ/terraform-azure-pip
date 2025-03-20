@@ -2,26 +2,33 @@
 resource "azurerm_public_ip" "public" {
   for_each = var.configs
 
-  name                    = each.value.name
-  resource_group_name     = coalesce(lookup(each.value, "resource_group", null), var.resource_group)
-  location                = coalesce(lookup(each.value, "location", null), var.location)
-  allocation_method       = try(each.value.allocation_method, "Static")
-  sku                     = try(each.value.sku, "Standard")
-  domain_name_label_scope = try(each.value.domain_name_label_scope, null)
-  public_ip_prefix_id     = lookup(each.value, "prefix", null) != null ? azurerm_public_ip_prefix.prefix[each.key].id : null
-  zones                   = try(each.value.zones, null)
-  ddos_protection_mode    = try(each.value.ddos_protection_mode, "VirtualNetworkInherited")
-  ddos_protection_plan_id = try(each.value.ddos_protection_plan_id, null)
-  domain_name_label       = try(each.value.domain_name_label, null)
-  edge_zone               = try(each.value.edge_zone, null)
-  idle_timeout_in_minutes = try(each.value.idle_timeout_in_minutes, null)
-  reverse_fqdn            = try(each.value.reverse_fqdn, null)
-  sku_tier                = try(each.value.sku_tier, "Regional")
-  ip_version              = try(each.value.ip_version, "IPv4")
-
-  ip_tags = try(
-    each.value.ip_tags, {}
+  resource_group_name = coalesce(
+    lookup(
+      each.value, "resource_group", null
+    ), var.resource_group
   )
+
+  location = coalesce(
+    lookup(each.value, "location", null
+    ), var.location
+  )
+
+
+  name                    = each.value.name
+  allocation_method       = each.value.allocation_method
+  sku                     = each.value.sku
+  domain_name_label_scope = each.value.domain_name_label_scope
+  public_ip_prefix_id     = lookup(each.value, "prefix", null) != null ? azurerm_public_ip_prefix.prefix[each.key].id : null
+  zones                   = each.value.zones
+  ddos_protection_mode    = each.value.ddos_protection_mode
+  ddos_protection_plan_id = each.value.ddos_protection_plan_id
+  domain_name_label       = each.value.domain_name_label
+  edge_zone               = each.value.edge_zone
+  idle_timeout_in_minutes = each.value.idle_timeout_in_minutes
+  reverse_fqdn            = each.value.reverse_fqdn
+  sku_tier                = each.value.sku_tier
+  ip_version              = each.value.ip_version
+  ip_tags                 = each.value.ip_tags
 
   tags = try(
     var.tags, {}
@@ -34,13 +41,33 @@ resource "azurerm_public_ip_prefix" "prefix" {
     if lookup(v, "prefix", null) != null
   }
 
-  name                = try(each.value.name, join("-", [var.naming.public_ip_prefix, each.key]))
-  resource_group_name = coalesce(lookup(each.value, "resource_group", null), var.resource_group)
-  location            = coalesce(lookup(each.value, "location", null), var.location)
-  prefix_length       = each.value.prefix_length
-  sku                 = try(each.value.sku, "Standard")
-  sku_tier            = try(each.value.sku_tier, "Regional")
-  ip_version          = try(each.value.ip_version, "IPv4")
-  zones               = try(each.value.zones, var.configs[each.key].zones)
-  tags                = try(var.tags, {})
+  name = coalesce(
+    lookup(each.value, "name", null
+    ), join("-", [var.naming.public_ip_prefix, each.key])
+  )
+
+  resource_group_name = coalesce(
+    lookup(
+      each.value, "resource_group", null
+    ), var.resource_group
+  )
+
+  location = coalesce(
+    lookup(
+      each.value, "location", null
+    ), var.location
+  )
+
+  prefix_length = each.value.prefix_length
+  sku           = each.value.sku
+  sku_tier      = each.value.sku_tier
+  ip_version    = each.value.ip_version
+
+  zones = try(
+    each.value.zones, var.configs[each.key].zones
+  )
+
+  tags = try(
+    var.tags, {}
+  )
 }

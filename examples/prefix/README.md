@@ -1,21 +1,4 @@
-# Prefix
-
 This deploys an IP prefix associated with the public ip.
-
-## Types
-
-```hcl
-config = map(object({
-  name           = string
-  location       = string
-  resource_group = string
-  zones          = optional(list(string))
-  prefix         = optional(object({
-    prefix_length = optional(number)
-    zones         = optional(list(string))
-  }))
-}))
-```
 
 ## Notes
 

@@ -1,6 +1,33 @@
 variable "configs" {
-  description = "configuration for public ip's"
-  type        = any
+  description = "Contains configuration for public ip addresses and prefixes"
+  type = map(object({
+    name                    = string
+    resource_group          = optional(string, null)
+    location                = optional(string, null)
+    allocation_method       = optional(string, "Static")
+    sku                     = optional(string, "Standard")
+    domain_name_label_scope = optional(string, null)
+    zones                   = optional(list(string), null)
+    ddos_protection_mode    = optional(string, "VirtualNetworkInherited")
+    ddos_protection_plan_id = optional(string, null)
+    domain_name_label       = optional(string, null)
+    edge_zone               = optional(string, null)
+    idle_timeout_in_minutes = optional(number, null)
+    reverse_fqdn            = optional(string, null)
+    sku_tier                = optional(string, "Regional")
+    ip_version              = optional(string, "IPv4")
+    ip_tags                 = optional(map(string), {})
+    prefix = optional(object({
+      name           = optional(string)
+      prefix_length  = number
+      resource_group = optional(string, null)
+      location       = optional(string, null)
+      sku            = optional(string, "Standard")
+      sku_tier       = optional(string, "Regional")
+      ip_version     = optional(string, "IPv4")
+      zones          = optional(list(string), null)
+    }), null)
+  }))
 }
 
 variable "naming" {
