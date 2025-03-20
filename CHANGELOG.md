@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.6.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.5.0...v2.6.0) (2025-03-20)
+
+
+### Features
+
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#31](https://github.com/CloudNationHQ/terraform-azure-pip/issues/31)) ([78690c5](https://github.com/CloudNationHQ/terraform-azure-pip/commit/78690c5c563c3f2863652acc41154dd800bdc1c8))
+* **deps:** bump golang.org/x/net from 0.33.0 to 0.36.0 in /tests ([#32](https://github.com/CloudNationHQ/terraform-azure-pip/issues/32)) ([3b4b081](https://github.com/CloudNationHQ/terraform-azure-pip/commit/3b4b081debbc35db6f857ac9ff18df966e8e26aa))
+* format documentation to include type definitions ([#33](https://github.com/CloudNationHQ/terraform-azure-pip/issues/33)) ([aac976e](https://github.com/CloudNationHQ/terraform-azure-pip/commit/aac976eb94c600be1c5c4f0b11015e961049237d))
+
 ## [2.5.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.4.0...v2.5.0) (2025-02-03)
 
 
