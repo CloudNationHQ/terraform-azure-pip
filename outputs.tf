@@ -4,6 +4,8 @@ output "configs" {
 }
 
 output "prefix" {
-  description = "configuration for public ip prefix"
-  value       = azurerm_public_ip_prefix.prefix
+  description = "Map of public IP prefixes"
+  value = {
+    for k, v in azurerm_public_ip_prefix.prefix : k => v.id
+  }
 }
