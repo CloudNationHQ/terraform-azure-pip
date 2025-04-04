@@ -1,6 +1,6 @@
 module "naming" {
   source  = "cloudnationhq/naming/azure"
-  version = "~> 0.22"
+  version = "~> 0.24"
 
   suffix = ["demo", "dev"]
 }
@@ -19,7 +19,7 @@ module "rg" {
 
 module "public_ip" {
   source  = "cloudnationhq/pip/azure"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   configs = {
     pub = {

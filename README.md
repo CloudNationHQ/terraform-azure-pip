@@ -30,7 +30,6 @@ The following providers are used by this module:
 The following resources are used by this module:
 
 - [azurerm_public_ip.public](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) (resource)
-- [azurerm_public_ip_prefix.prefix](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip_prefix) (resource)
 
 ## Required Inputs
 
@@ -38,7 +37,7 @@ The following input variables are required:
 
 ### <a name="input_configs"></a> [configs](#input\_configs)
 
-Description: Contains configuration for public ip addresses and prefixes
+Description: Contains configuration for public ip addresses
 
 Type:
 
@@ -60,16 +59,8 @@ map(object({
     sku_tier                = optional(string, "Regional")
     ip_version              = optional(string, "IPv4")
     ip_tags                 = optional(map(string), {})
-    prefix = optional(object({
-      name           = optional(string)
-      prefix_length  = number
-      resource_group = optional(string, null)
-      location       = optional(string, null)
-      sku            = optional(string, "Standard")
-      sku_tier       = optional(string, "Regional")
-      ip_version     = optional(string, "IPv4")
-      zones          = optional(list(string), null)
-    }), null)
+    public_ip_prefix_id     = optional(string, null)
+    tags                    = optional(map(string))
   }))
 ```
 
@@ -84,14 +75,6 @@ Description: default azure region to be used.
 Type: `string`
 
 Default: `null`
-
-### <a name="input_naming"></a> [naming](#input\_naming)
-
-Description: used for naming purposes
-
-Type: `map(string)`
-
-Default: `{}`
 
 ### <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group)
 
@@ -115,11 +98,7 @@ The following outputs are exported:
 
 ### <a name="output_configs"></a> [configs](#output\_configs)
 
-Description: configuration for public ip's
-
-### <a name="output_prefix"></a> [prefix](#output\_prefix)
-
-Description: configuration for public ip prefix
+Description: contains all public ip addresses
 <!-- END_TF_DOCS -->
 
 ## Goals
@@ -138,15 +117,15 @@ Full examples detailing all usages, along with integrations with dependency modu
 
 To update the module's documentation run `make doc`
 
-## Authors
-
-Module is maintained by [these awesome contributors](https://github.com/cloudnationhq/terraform-azure-pip/graphs/contributors).
-
-## Contributing
+## Contributors
 
 We welcome contributions from the community! Whether it's reporting a bug, suggesting a new feature, or submitting a pull request, your input is highly valued.
 
-For more information, please see our contribution [guidelines](./CONTRIBUTING.md).
+For more information, please see our contribution [guidelines](./CONTRIBUTING.md). <br><br>
+
+<a href="https://github.com/cloudnationhq/terraform-azure-pip/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=cloudnationhq/terraform-azure-pip" />
+</a>
 
 ## License
 

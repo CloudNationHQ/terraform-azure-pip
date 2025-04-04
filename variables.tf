@@ -1,5 +1,5 @@
 variable "configs" {
-  description = "Contains configuration for public ip addresses and prefixes"
+  description = "Contains configuration for public ip addresses"
   type = map(object({
     name                    = string
     resource_group          = optional(string, null)
@@ -17,23 +17,9 @@ variable "configs" {
     sku_tier                = optional(string, "Regional")
     ip_version              = optional(string, "IPv4")
     ip_tags                 = optional(map(string), {})
-    prefix = optional(object({
-      name           = optional(string)
-      prefix_length  = number
-      resource_group = optional(string, null)
-      location       = optional(string, null)
-      sku            = optional(string, "Standard")
-      sku_tier       = optional(string, "Regional")
-      ip_version     = optional(string, "IPv4")
-      zones          = optional(list(string), null)
-    }), null)
+    public_ip_prefix_id     = optional(string, null)
+    tags                    = optional(map(string))
   }))
-}
-
-variable "naming" {
-  description = "used for naming purposes"
-  type        = map(string)
-  default     = {}
 }
 
 variable "location" {
