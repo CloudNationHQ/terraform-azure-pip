@@ -1,4 +1,4 @@
-# Ip Prefixex
+# Ip Prefixes
 
 This submodule illustrates how to manage public ip prefixes
 
