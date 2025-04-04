@@ -30,7 +30,6 @@ The following providers are used by this module:
 The following resources are used by this module:
 
 - [azurerm_public_ip.public](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) (resource)
-- [azurerm_public_ip_prefix.prefix](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip_prefix) (resource)
 
 ## Required Inputs
 
@@ -38,7 +37,7 @@ The following input variables are required:
 
 ### <a name="input_configs"></a> [configs](#input\_configs)
 
-Description: Contains configuration for public ip addresses and prefixes
+Description: Contains configuration for public ip addresses
 
 Type:
 
@@ -60,16 +59,18 @@ map(object({
     sku_tier                = optional(string, "Regional")
     ip_version              = optional(string, "IPv4")
     ip_tags                 = optional(map(string), {})
-    prefix = optional(object({
-      name           = optional(string)
-      prefix_length  = number
-      resource_group = optional(string, null)
-      location       = optional(string, null)
-      sku            = optional(string, "Standard")
-      sku_tier       = optional(string, "Regional")
-      ip_version     = optional(string, "IPv4")
-      zones          = optional(list(string), null)
-    }), null)
+    public_ip_prefix_id     = optional(string, null)
+    tags                    = optional(map(string))
+    # prefix = optional(object({
+    #   name           = optional(string)
+    #   prefix_length  = number
+    #   resource_group = optional(string, null)
+    #   location       = optional(string, null)
+    #   sku            = optional(string, "Standard")
+    #   sku_tier       = optional(string, "Regional")
+    #   ip_version     = optional(string, "IPv4")
+    #   zones          = optional(list(string), null)
+    # }), null)
   }))
 ```
 
@@ -116,10 +117,6 @@ The following outputs are exported:
 ### <a name="output_configs"></a> [configs](#output\_configs)
 
 Description: configuration for public ip's
-
-### <a name="output_prefix"></a> [prefix](#output\_prefix)
-
-Description: configuration for public ip prefix
 <!-- END_TF_DOCS -->
 
 ## Goals

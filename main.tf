@@ -18,7 +18,7 @@ resource "azurerm_public_ip" "public" {
   allocation_method       = each.value.allocation_method
   sku                     = each.value.sku
   domain_name_label_scope = each.value.domain_name_label_scope
-  public_ip_prefix_id     = lookup(each.value, "prefix", null) != null ? azurerm_public_ip_prefix.prefix[each.key].id : null
+  public_ip_prefix_id     = each.value.public_ip_prefix_id
   zones                   = each.value.zones
   ddos_protection_mode    = each.value.ddos_protection_mode
   ddos_protection_plan_id = each.value.ddos_protection_plan_id
@@ -31,43 +31,6 @@ resource "azurerm_public_ip" "public" {
   ip_tags                 = each.value.ip_tags
 
   tags = try(
-    var.tags, {}
-  )
-}
-
-resource "azurerm_public_ip_prefix" "prefix" {
-  for_each = {
-    for k, v in var.configs : k => v.prefix
-    if lookup(v, "prefix", null) != null
-  }
-
-  name = coalesce(
-    lookup(each.value, "name", null
-    ), join("-", [var.naming.public_ip_prefix, each.key])
-  )
-
-  resource_group_name = coalesce(
-    lookup(
-      each.value, "resource_group", null
-    ), var.resource_group
-  )
-
-  location = coalesce(
-    lookup(
-      each.value, "location", null
-    ), var.location
-  )
-
-  prefix_length = each.value.prefix_length
-  sku           = each.value.sku
-  sku_tier      = each.value.sku_tier
-  ip_version    = each.value.ip_version
-
-  zones = try(
-    each.value.zones, var.configs[each.key].zones
-  )
-
-  tags = try(
-    var.tags, {}
+    each.value.tags, var.tags, null
   )
 }

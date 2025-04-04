@@ -18,21 +18,33 @@ module "rg" {
 }
 
 module "public_ip" {
-  source  = "cloudnationhq/pip/azure"
-  version = "~> 2.0"
+  # source  = "cloudnationhq/pip/azure"
+  # version = "~> 2.0"
+  source = "../../"
 
-  naming = local.naming
+  configs = {
+    pub = {
+      name                = module.naming.public_ip.name
+      location            = module.rg.groups.demo.location
+      resource_group      = module.rg.groups.demo.name
+      public_ip_prefix_id = module.prefixes.configs.pub1.id
+
+      zones = ["1", "2", "3"]
+    }
+  }
+}
+
+module "prefixes" {
+  source = "../../modules/prefixes"
 
   resource_group = module.rg.groups.demo.name
   location       = module.rg.groups.demo.location
 
   configs = {
-    pub = {
-      name  = module.naming.public_ip.name
-      zones = ["1", "2", "3"]
-      prefix = {
-        prefix_length = 31 # 2 ip's
-      }
+    pub1 = {
+      name          = module.naming.public_ip_prefix.name
+      prefix_length = 31
+      zones         = ["1", "2", "3"]
     }
   }
 }
