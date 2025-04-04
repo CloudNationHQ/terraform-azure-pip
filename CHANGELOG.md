@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.7.0...v3.0.0) (2025-04-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* prefix resources is removed from main module
+
+### Features
+
+* move prefixes to submodule ([#37](https://github.com/CloudNationHQ/terraform-azure-pip/issues/37)) ([e38d700](https://github.com/CloudNationHQ/terraform-azure-pip/commit/e38d700d1692b65bb340f0f8b3f0d958ccbbfbe3))
+
 ## [2.7.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.6.0...v2.7.0) (2025-04-03)
 
 
