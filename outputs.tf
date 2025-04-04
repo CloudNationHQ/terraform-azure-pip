@@ -1,4 +1,4 @@
 output "configs" {
-  description = "configuration for public ip's"
+  description = "contains all public ip addresses"
   value       = azurerm_public_ip.public
 }

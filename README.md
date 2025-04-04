@@ -61,16 +61,6 @@ map(object({
     ip_tags                 = optional(map(string), {})
     public_ip_prefix_id     = optional(string, null)
     tags                    = optional(map(string))
-    # prefix = optional(object({
-    #   name           = optional(string)
-    #   prefix_length  = number
-    #   resource_group = optional(string, null)
-    #   location       = optional(string, null)
-    #   sku            = optional(string, "Standard")
-    #   sku_tier       = optional(string, "Regional")
-    #   ip_version     = optional(string, "IPv4")
-    #   zones          = optional(list(string), null)
-    # }), null)
   }))
 ```
 
@@ -116,7 +106,7 @@ The following outputs are exported:
 
 ### <a name="output_configs"></a> [configs](#output\_configs)
 
-Description: configuration for public ip's
+Description: contains all public ip addresses
 <!-- END_TF_DOCS -->
 
 ## Goals

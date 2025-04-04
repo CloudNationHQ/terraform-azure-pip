@@ -19,16 +19,6 @@ variable "configs" {
     ip_tags                 = optional(map(string), {})
     public_ip_prefix_id     = optional(string, null)
     tags                    = optional(map(string))
-    # prefix = optional(object({
-    #   name           = optional(string)
-    #   prefix_length  = number
-    #   resource_group = optional(string, null)
-    #   location       = optional(string, null)
-    #   sku            = optional(string, "Standard")
-    #   sku_tier       = optional(string, "Regional")
-    #   ip_version     = optional(string, "IPv4")
-    #   zones          = optional(list(string), null)
-    # }), null)
   }))
 }
 

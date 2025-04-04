@@ -81,5 +81,5 @@ The following outputs are exported:
 
 ### <a name="output_configs"></a> [configs](#output\_configs)
 
-Description: Configuration for public IP prefixes
+Description: contains all public ip prefixes
 <!-- END_TF_DOCS -->

@@ -1,6 +1,6 @@
 module "naming" {
   source  = "cloudnationhq/naming/azure"
-  version = "~> 0.22"
+  version = "~> 0.24"
 
   suffix = ["demo", "dev"]
 }
@@ -18,9 +18,8 @@ module "rg" {
 }
 
 module "public_ip" {
-  # source  = "cloudnationhq/pip/azure"
-  # version = "~> 2.0"
-  source = "../../"
+  source  = "cloudnationhq/pip/azure"
+  version = "~> 3.0"
 
   configs = {
     pub = {
@@ -35,7 +34,8 @@ module "public_ip" {
 }
 
 module "prefixes" {
-  source = "../../modules/prefixes"
+  source  = "cloudnationhq/pip/azure//modules/prefixes"
+  version = "~> 3.0"
 
   resource_group = module.rg.groups.demo.name
   location       = module.rg.groups.demo.location
