@@ -2,7 +2,7 @@ variable "configs" {
   description = "Contains configuration for public ip addresses"
   type = map(object({
     name                    = string
-    resource_group          = optional(string, null)
+    resource_group_name     = optional(string, null)
     location                = optional(string, null)
     allocation_method       = optional(string, "Static")
     sku                     = optional(string, "Standard")
@@ -28,7 +28,7 @@ variable "location" {
   default     = null
 }
 
-variable "resource_group" {
+variable "resource_group_name" {
   description = "default resource group to be used."
   type        = string
   default     = null

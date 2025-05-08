@@ -4,8 +4,8 @@ resource "azurerm_public_ip" "public" {
 
   resource_group_name = coalesce(
     lookup(
-      each.value, "resource_group", null
-    ), var.resource_group
+      each.value, "resource_group_name", null
+    ), var.resource_group_name
   )
 
   location = coalesce(
@@ -30,7 +30,7 @@ resource "azurerm_public_ip" "public" {
   ip_version              = each.value.ip_version
   ip_tags                 = each.value.ip_tags
 
-  tags = try(
-    each.value.tags, var.tags, null
+  tags = coalesce(
+    each.value.tags, var.tags
   )
 }

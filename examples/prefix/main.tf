@@ -19,13 +19,13 @@ module "rg" {
 
 module "public_ip" {
   source  = "cloudnationhq/pip/azure"
-  version = "~> 3.0"
+  version = "~> 4.0"
 
   configs = {
     pub = {
       name                = module.naming.public_ip.name
       location            = module.rg.groups.demo.location
-      resource_group      = module.rg.groups.demo.name
+      resource_group_name = module.rg.groups.demo.name
       public_ip_prefix_id = module.prefixes.configs.pub1.id
 
       zones = ["1", "2", "3"]
@@ -35,10 +35,10 @@ module "public_ip" {
 
 module "prefixes" {
   source  = "cloudnationhq/pip/azure//modules/prefixes"
-  version = "~> 3.0"
+  version = "~> 4.0"
 
-  resource_group = module.rg.groups.demo.name
-  location       = module.rg.groups.demo.location
+  resource_group_name = module.rg.groups.demo.name
+  location            = module.rg.groups.demo.location
 
   configs = {
     pub1 = {

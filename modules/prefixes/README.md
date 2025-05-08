@@ -35,15 +35,15 @@ Type:
 
 ```hcl
 map(object({
-    name           = string
-    prefix_length  = number
-    resource_group = optional(string)
-    location       = optional(string)
-    sku            = optional(string, "Standard")
-    sku_tier       = optional(string, "Regional")
-    ip_version     = optional(string, "IPv4")
-    zones          = optional(list(string))
-    tags           = optional(map(string))
+    name                = string
+    prefix_length       = number
+    resource_group_name = optional(string)
+    location            = optional(string)
+    sku                 = optional(string, "Standard")
+    sku_tier            = optional(string, "Regional")
+    ip_version          = optional(string, "IPv4")
+    zones               = optional(list(string))
+    tags                = optional(map(string))
   }))
 ```
 
@@ -59,7 +59,7 @@ Type: `string`
 
 Default: `null`
 
-### <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group)
+### <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name)
 
 Description: default resource group and can be used if resourcegroup is not specified inside the object.
 
