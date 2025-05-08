@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v3.0.0...v4.0.0) (2025-05-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* The data structure changed, causing a recreate on existing resources.
+
+### Features
+
+* small refactor ([#40](https://github.com/CloudNationHQ/terraform-azure-pip/issues/40)) ([5fe6c0f](https://github.com/CloudNationHQ/terraform-azure-pip/commit/5fe6c0f6fbba154bf34b8ab11aee83fdbdd29deb))
+
 ## [3.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.7.0...v3.0.0) (2025-04-04)
 
 
