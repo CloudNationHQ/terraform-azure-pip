@@ -44,7 +44,7 @@ Type:
 ```hcl
 map(object({
     name                    = string
-    resource_group          = optional(string, null)
+    resource_group_name     = optional(string, null)
     location                = optional(string, null)
     allocation_method       = optional(string, "Static")
     sku                     = optional(string, "Standard")
@@ -76,7 +76,7 @@ Type: `string`
 
 Default: `null`
 
-### <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group)
+### <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name)
 
 Description: default resource group to be used.
 
