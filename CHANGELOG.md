@@ -11,6 +11,11 @@
 
 * small refactor ([#40](https://github.com/CloudNationHQ/terraform-azure-pip/issues/40)) ([5fe6c0f](https://github.com/CloudNationHQ/terraform-azure-pip/commit/5fe6c0f6fbba154bf34b8ab11aee83fdbdd29deb))
 
+### Upgrade from v3.0.0 to v4.0.0:
+
+- Update module reference to: `version = "~> 4.0"`
+- The property and variable resource_group is renamed to resource_group_name
+
 ## [3.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v2.7.0...v3.0.0) (2025-04-04)
 
 
