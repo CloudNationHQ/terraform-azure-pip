@@ -1,7 +1,7 @@
 variable "configs" {
   description = "Contains configuration for public ip addresses"
   type = map(object({
-    name                    = string
+    name                    = optional(string, null)
     resource_group_name     = optional(string, null)
     location                = optional(string, null)
     allocation_method       = optional(string, "Static")
@@ -20,6 +20,30 @@ variable "configs" {
     public_ip_prefix_id     = optional(string, null)
     tags                    = optional(map(string))
   }))
+
+  validation {
+    condition = alltrue([
+      for k, v in var.configs : (
+        v.location != null || var.location != null
+      )
+    ])
+    error_message = "location must be provided either in the config object or as a separate variable."
+  }
+
+  validation {
+    condition = alltrue([
+      for k, v in var.configs : (
+        v.resource_group_name != null || var.resource_group_name != null
+      )
+    ])
+    error_message = "resource group name must be provided either in the config object or as a separate variable."
+  }
+}
+
+variable "naming" {
+  description = "contains naming convention"
+  type        = map(string)
+  default     = {}
 }
 
 variable "location" {

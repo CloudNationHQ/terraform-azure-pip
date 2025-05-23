@@ -12,8 +12,12 @@ resource "azurerm_public_ip_prefix" "prefix" {
     ), var.location
   )
 
+  name = coalesce(
+    each.value.name, try(
+      join("-", [var.naming.public_ip_prefix, each.key]), null
+    ), each.key
+  )
 
-  name          = each.value.name
   prefix_length = each.value.prefix_length
   sku           = each.value.sku
   sku_tier      = each.value.sku_tier

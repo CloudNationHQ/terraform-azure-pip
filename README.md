@@ -10,6 +10,8 @@ Utilization of terratest for robust validation.
 
 Supports multiple public ip addresses
 
+Offers three-tier naming hierarchy (explicit, convention-based, or key-based) for flexible resource management.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -43,7 +45,7 @@ Type:
 
 ```hcl
 map(object({
-    name                    = string
+    name                    = optional(string, null)
     resource_group_name     = optional(string, null)
     location                = optional(string, null)
     allocation_method       = optional(string, "Static")
@@ -75,6 +77,14 @@ Description: default azure region to be used.
 Type: `string`
 
 Default: `null`
+
+### <a name="input_naming"></a> [naming](#input\_naming)
+
+Description: contains naming convention
+
+Type: `map(string)`
+
+Default: `{}`
 
 ### <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name)
 

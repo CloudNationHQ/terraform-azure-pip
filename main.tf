@@ -14,7 +14,12 @@ resource "azurerm_public_ip" "public" {
   )
 
 
-  name                    = each.value.name
+  name = coalesce(
+    each.value.name, try(
+      join("-", [var.naming.public_ip, each.key]), null
+    ), each.key
+  )
+
   allocation_method       = each.value.allocation_method
   sku                     = each.value.sku
   domain_name_label_scope = each.value.domain_name_label_scope

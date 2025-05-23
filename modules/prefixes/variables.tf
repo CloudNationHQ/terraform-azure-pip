@@ -1,7 +1,7 @@
 variable "configs" {
   description = "Contains configuration for public ip prefixes"
   type = map(object({
-    name                = string
+    name                = optional(string, null)
     prefix_length       = number
     resource_group_name = optional(string)
     location            = optional(string)
@@ -11,6 +11,12 @@ variable "configs" {
     zones               = optional(list(string))
     tags                = optional(map(string))
   }))
+}
+
+variable "naming" {
+  description = "contains naming convention"
+  type        = map(string)
+  default     = {}
 }
 
 variable "resource_group_name" {

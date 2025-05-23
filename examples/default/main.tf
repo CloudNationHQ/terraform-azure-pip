@@ -21,13 +21,13 @@ module "public_ip" {
   source  = "cloudnationhq/pip/azure"
   version = "~> 4.0"
 
+  naming = local.naming
+
   configs = {
-    pub = {
-      name                = module.naming.public_ip.name
+    pub1 = {
       location            = module.rg.groups.demo.location
       resource_group_name = module.rg.groups.demo.name
-
-      zones = ["1", "2", "3"]
+      zones               = ["1", "2", "3"]
     }
   }
 }
