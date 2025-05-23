@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.0.0...v4.1.0) (2025-05-23)
+
+
+### Features
+
+* **deps:** bump github.com/cloudnationhq/az-cn-go-validor in /tests ([#42](https://github.com/CloudNationHQ/terraform-azure-pip/issues/42)) ([7c92838](https://github.com/CloudNationHQ/terraform-azure-pip/commit/7c92838458494b5f4739bd1a0109d5fac49c9e6e))
+* implement flexible resource naming ([#43](https://github.com/CloudNationHQ/terraform-azure-pip/issues/43)) ([94c59b0](https://github.com/CloudNationHQ/terraform-azure-pip/commit/94c59b0e0fcc4f3acdd05c11e670d3b5e29617c8))
+
 ## [4.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v3.0.0...v4.0.0) (2025-05-08)
 
 
