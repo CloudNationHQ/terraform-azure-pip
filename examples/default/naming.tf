@@ -4,5 +4,5 @@ locals {
     for type in local.naming_types : type => lookup(module.naming, type, {}).name
   }
 
-  naming_types = ["public_ip_prefix", "public_ip"]
+  naming_types = ["public_ip"]
 }
