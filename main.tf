@@ -13,7 +13,6 @@ resource "azurerm_public_ip" "public" {
     ), var.location
   )
 
-
   name = coalesce(
     each.value.name, try(
       join("-", [var.naming.public_ip, each.key]), null

@@ -35,7 +35,7 @@ Type:
 
 ```hcl
 map(object({
-    name                = optional(string, null)
+    name                = optional(string)
     prefix_length       = number
     resource_group_name = optional(string)
     location            = optional(string)
