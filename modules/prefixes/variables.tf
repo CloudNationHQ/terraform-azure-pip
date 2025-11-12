@@ -1,7 +1,7 @@
 variable "configs" {
   description = "Contains configuration for public ip prefixes"
   type = map(object({
-    name                = optional(string, null)
+    name                = optional(string)
     prefix_length       = number
     resource_group_name = optional(string)
     location            = optional(string)
