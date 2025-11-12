@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.2.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.1.0...v4.2.0) (2025-11-12)
+
+
+### Features
+
+* **deps:** bump github.com/ulikunitz/xz from 0.5.10 to 0.5.14 in /tests ([#48](https://github.com/CloudNationHQ/terraform-azure-pip/issues/48)) ([0e5a910](https://github.com/CloudNationHQ/terraform-azure-pip/commit/0e5a9104ef4609bb995881603b9198f2436e9d45))
+* remove redundant null values ([#53](https://github.com/CloudNationHQ/terraform-azure-pip/issues/53)) ([d4cabb0](https://github.com/CloudNationHQ/terraform-azure-pip/commit/d4cabb0c6bedafbc6c8a584ac639dcdc59df341b))
+
 ## [4.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.0.0...v4.1.0) (2025-05-23)
 
 
