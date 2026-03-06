@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.3.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.2.0...v4.3.0) (2026-03-06)
+
+
+### Features
+
+* add custom ip prefix id to public ip prefix configurations ([#58](https://github.com/CloudNationHQ/terraform-azure-pip/issues/58)) ([4e9fdb3](https://github.com/CloudNationHQ/terraform-azure-pip/commit/4e9fdb306d720858627a5017b8c8012521bad1a9))
+* **deps:** bump github.com/cloudnationhq/az-cn-go-validor in /tests ([#57](https://github.com/CloudNationHQ/terraform-azure-pip/issues/57)) ([f35a5ff](https://github.com/CloudNationHQ/terraform-azure-pip/commit/f35a5ff22e60563f869c67d225cb33ecabb90ca0))
+* **deps:** bump golang.org/x/crypto from 0.36.0 to 0.45.0 in /tests ([#55](https://github.com/CloudNationHQ/terraform-azure-pip/issues/55)) ([8bdc0b3](https://github.com/CloudNationHQ/terraform-azure-pip/commit/8bdc0b31c7d744a2c1ed1b712637becfa09f2e09))
+
 ## [4.2.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.1.0...v4.2.0) (2025-11-12)
 
 
