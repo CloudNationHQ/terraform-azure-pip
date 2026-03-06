@@ -42,6 +42,7 @@ map(object({
     sku                 = optional(string, "Standard")
     sku_tier            = optional(string, "Regional")
     ip_version          = optional(string, "IPv4")
+    custom_ip_prefix_id = optional(string)
     zones               = optional(list(string))
     tags                = optional(map(string))
   }))
