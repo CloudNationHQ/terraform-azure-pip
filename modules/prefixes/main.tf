@@ -18,11 +18,12 @@ resource "azurerm_public_ip_prefix" "prefix" {
     ), each.key
   )
 
-  prefix_length = each.value.prefix_length
-  sku           = each.value.sku
-  sku_tier      = each.value.sku_tier
-  ip_version    = each.value.ip_version
-  zones         = each.value.zones
+  prefix_length       = each.value.prefix_length
+  sku                 = each.value.sku
+  sku_tier            = each.value.sku_tier
+  ip_version          = each.value.ip_version
+  custom_ip_prefix_id = each.value.custom_ip_prefix_id
+  zones               = each.value.zones
 
   tags = coalesce(
     each.value.tags, var.tags
