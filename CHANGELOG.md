@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.4.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.3.0...v4.4.0) (2026-05-04)
+
+
+### Features
+
+* **deps:** bump github.com/cloudnationhq/az-cn-go-validor in /tests ([#60](https://github.com/CloudNationHQ/terraform-azure-pip/issues/60)) ([1d37923](https://github.com/CloudNationHQ/terraform-azure-pip/commit/1d379232637ce2503537e17c31e5610fdbf63ff5))
+* **deps:** bump github.com/cloudnationhq/az-cn-go-validor in /tests ([#62](https://github.com/CloudNationHQ/terraform-azure-pip/issues/62)) ([3d75b44](https://github.com/CloudNationHQ/terraform-azure-pip/commit/3d75b44d21fbe6bd4fab399f34467bc8533ae12f))
+* **deps:** bump github.com/cloudnationhq/az-cn-go-validor in /tests ([#63](https://github.com/CloudNationHQ/terraform-azure-pip/issues/63)) ([869e9cb](https://github.com/CloudNationHQ/terraform-azure-pip/commit/869e9cb4467c2161845f3109941a42f1d3e0b12f))
+
 ## [4.3.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.2.0...v4.3.0) (2026-03-06)
 
 
