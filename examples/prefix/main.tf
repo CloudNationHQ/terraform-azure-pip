@@ -7,7 +7,7 @@ module "naming" {
 
 module "rg" {
   source  = "cloudnationhq/rg/azure"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   groups = {
     demo = {
@@ -19,15 +19,14 @@ module "rg" {
 
 module "public_ip" {
   source  = "cloudnationhq/pip/azure"
-  version = "~> 4.0"
+  version = "~> 5.0"
 
-  naming = local.naming
-
-  configs = {
+  public_ips = {
     pub1 = {
+      name                = module.naming.public_ip.name_unique
       location            = module.rg.groups.demo.location
       resource_group_name = module.rg.groups.demo.name
-      public_ip_prefix_id = module.prefixes.configs.pub1.id
+      public_ip_prefix_id = module.prefixes.public_ip_prefixes.pub1.id
       zones               = ["1", "2", "3"]
     }
   }
@@ -35,15 +34,14 @@ module "public_ip" {
 
 module "prefixes" {
   source  = "cloudnationhq/pip/azure//modules/prefixes"
-  version = "~> 4.0"
-
-  naming = local.naming
+  version = "~> 5.0"
 
   resource_group_name = module.rg.groups.demo.name
   location            = module.rg.groups.demo.location
 
-  configs = {
+  public_ip_prefixes = {
     pub1 = {
+      name          = module.naming.public_ip_prefix.name_unique
       prefix_length = 31
       zones         = ["1", "2", "3"]
     }

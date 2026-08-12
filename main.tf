@@ -1,25 +1,12 @@
 # public ip
-resource "azurerm_public_ip" "public" {
-  for_each = var.configs
+resource "azurerm_public_ip" "this" {
+  for_each = var.public_ips
 
-  resource_group_name = coalesce(
-    lookup(
-      each.value, "resource_group_name", null
-    ), var.resource_group_name
-  )
+  name                = coalesce(each.value.name, each.key)
+  resource_group_name = coalesce(each.value.resource_group_name, var.resource_group_name)
+  location            = coalesce(each.value.location, var.location)
 
-  location = coalesce(
-    lookup(each.value, "location", null
-    ), var.location
-  )
-
-  name = coalesce(
-    each.value.name, try(
-      join("-", [var.naming.public_ip, each.key]), null
-    ), each.key
-  )
-
-  allocation_method       = each.value.allocation_method
+  allocation_method       = coalesce(each.value.allocation_method, "Static")
   sku                     = each.value.sku
   domain_name_label_scope = each.value.domain_name_label_scope
   public_ip_prefix_id     = each.value.public_ip_prefix_id
@@ -34,7 +21,5 @@ resource "azurerm_public_ip" "public" {
   ip_version              = each.value.ip_version
   ip_tags                 = each.value.ip_tags
 
-  tags = coalesce(
-    each.value.tags, var.tags
-  )
+  tags = coalesce(each.value.tags, var.tags)
 }

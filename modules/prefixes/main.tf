@@ -1,22 +1,10 @@
-resource "azurerm_public_ip_prefix" "prefix" {
-  for_each = var.configs
+# public ip prefix
+resource "azurerm_public_ip_prefix" "this" {
+  for_each = var.public_ip_prefixes
 
-  resource_group_name = coalesce(
-    lookup(
-      each.value, "resource_group_name", null
-    ), var.resource_group_name
-  )
-
-  location = coalesce(
-    lookup(each.value, "location", null
-    ), var.location
-  )
-
-  name = coalesce(
-    each.value.name, try(
-      join("-", [var.naming.public_ip_prefix, each.key]), null
-    ), each.key
-  )
+  name                = coalesce(each.value.name, each.key)
+  resource_group_name = coalesce(each.value.resource_group_name, var.resource_group_name)
+  location            = coalesce(each.value.location, var.location)
 
   prefix_length       = each.value.prefix_length
   sku                 = each.value.sku
@@ -25,7 +13,5 @@ resource "azurerm_public_ip_prefix" "prefix" {
   custom_ip_prefix_id = each.value.custom_ip_prefix_id
   zones               = each.value.zones
 
-  tags = coalesce(
-    each.value.tags, var.tags
-  )
+  tags = coalesce(each.value.tags, var.tags)
 }
