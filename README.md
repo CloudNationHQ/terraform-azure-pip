@@ -10,7 +10,7 @@ Utilization of terratest for robust validation.
 
 Supports multiple public ip addresses
 
-Offers three-tier naming hierarchy (explicit, convention-based, or key-based) for flexible resource management.
+Offers explicit or key-based resource naming for flexible resource management.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -19,19 +19,19 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.0)
 
-- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (~> 4.0)
+- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (~> 5.0)
 
 ## Providers
 
 The following providers are used by this module:
 
-- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (~> 4.0)
+- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (~> 5.0)
 
 ## Resources
 
 The following resources are used by this module:
 
-- [azurerm_public_ip.public](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) (resource)
+- [azurerm_public_ip.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) (resource)
 
 ## Required Inputs
 
@@ -39,7 +39,7 @@ The following input variables are required:
 
 ### <a name="input_configs"></a> [configs](#input\_configs)
 
-Description: Contains configuration for public ip addresses
+Description: contains all public ip configuration
 
 Type:
 
@@ -49,18 +49,18 @@ map(object({
     resource_group_name     = optional(string)
     location                = optional(string)
     allocation_method       = optional(string, "Static")
-    sku                     = optional(string, "Standard")
+    sku                     = optional(string)
+    sku_tier                = optional(string)
+    domain_name_label       = optional(string)
     domain_name_label_scope = optional(string)
     zones                   = optional(list(string))
-    ddos_protection_mode    = optional(string, "VirtualNetworkInherited")
+    ddos_protection_mode    = optional(string)
     ddos_protection_plan_id = optional(string)
-    domain_name_label       = optional(string)
     edge_zone               = optional(string)
     idle_timeout_in_minutes = optional(number, 4)
     reverse_fqdn            = optional(string)
-    sku_tier                = optional(string, "Regional")
-    ip_version              = optional(string, "IPv4")
-    ip_tags                 = optional(map(string), {})
+    ip_version              = optional(string)
+    ip_tags                 = optional(map(string))
     public_ip_prefix_id     = optional(string)
     tags                    = optional(map(string))
   }))
@@ -77,14 +77,6 @@ Description: default azure region to be used.
 Type: `string`
 
 Default: `null`
-
-### <a name="input_naming"></a> [naming](#input\_naming)
-
-Description: contains naming convention
-
-Type: `map(string)`
-
-Default: `{}`
 
 ### <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name)
 
@@ -132,10 +124,6 @@ To update the module's documentation run `make doc`
 We welcome contributions from the community! Whether it's reporting a bug, suggesting a new feature, or submitting a pull request, your input is highly valued.
 
 For more information, please see our contribution [guidelines](./CONTRIBUTING.md). <br><br>
-
-<a href="https://github.com/cloudnationhq/terraform-azure-pip/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=cloudnationhq/terraform-azure-pip" />
-</a>
 
 ## License
 
