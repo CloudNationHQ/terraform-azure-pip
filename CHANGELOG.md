@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.4.0...v5.0.0) (2026-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* this change causes recreates
+
+### Features
+
+* azurerm provider 5 upgrade ([#67](https://github.com/CloudNationHQ/terraform-azure-pip/issues/67)) ([506552a](https://github.com/CloudNationHQ/terraform-azure-pip/commit/506552a843bb204d293556c29ac772ed33b7be6a))
+
 ## [4.4.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.3.0...v4.4.0) (2026-07-10)
 
 
