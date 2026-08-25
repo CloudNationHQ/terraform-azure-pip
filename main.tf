@@ -1,6 +1,6 @@
 # public ip
 resource "azurerm_public_ip" "this" {
-  for_each = var.configs
+  for_each = var.public_ips
 
   name = coalesce(
     each.value.name, each.key

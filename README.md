@@ -37,7 +37,7 @@ The following resources are used by this module:
 
 The following input variables are required:
 
-### <a name="input_configs"></a> [configs](#input\_configs)
+### <a name="input_public_ips"></a> [public\_ips](#input\_public\_ips)
 
 Description: contains all public ip configuration
 
@@ -98,7 +98,7 @@ Default: `{}`
 
 The following outputs are exported:
 
-### <a name="output_configs"></a> [configs](#output\_configs)
+### <a name="output_public_ips"></a> [public\_ips](#output\_public\_ips)
 
 Description: contains all public ip addresses
 <!-- END_TF_DOCS -->

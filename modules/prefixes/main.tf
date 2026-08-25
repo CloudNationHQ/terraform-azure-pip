@@ -1,6 +1,6 @@
 # public ip prefix
 resource "azurerm_public_ip_prefix" "this" {
-  for_each = var.configs
+  for_each = var.public_ip_prefixes
 
   name = coalesce(
     each.value.name, each.key

@@ -27,7 +27,7 @@ The following resources are used by this module:
 
 The following input variables are required:
 
-### <a name="input_configs"></a> [configs](#input\_configs)
+### <a name="input_public_ip_prefixes"></a> [public\_ip\_prefixes](#input\_public\_ip\_prefixes)
 
 Description: contains all public ip prefix configuration
 
@@ -80,7 +80,7 @@ Default: `{}`
 
 The following outputs are exported:
 
-### <a name="output_configs"></a> [configs](#output\_configs)
+### <a name="output_public_ip_prefixes"></a> [public\_ip\_prefixes](#output\_public\_ip\_prefixes)
 
 Description: contains all public ip prefixes
 <!-- END_TF_DOCS -->

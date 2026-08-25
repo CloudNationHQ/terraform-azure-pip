@@ -1,4 +1,4 @@
-variable "configs" {
+variable "public_ips" {
   description = "contains all public ip configuration"
   type = map(object({
     name                    = optional(string)
@@ -23,20 +23,20 @@ variable "configs" {
 
   validation {
     condition = alltrue([
-      for k, v in var.configs : (
+      for k, v in var.public_ips : (
         lookup(v, "location", null) != null || var.location != null
       )
     ])
-    error_message = "location must be provided either in the config object or as a separate variable."
+    error_message = "location must be provided either in the public ip object or as a separate variable."
   }
 
   validation {
     condition = alltrue([
-      for k, v in var.configs : (
+      for k, v in var.public_ips : (
         lookup(v, "resource_group_name", null) != null || var.resource_group_name != null
       )
     ])
-    error_message = "resource group name must be provided either in the config object or as a separate variable."
+    error_message = "resource group name must be provided either in the public ip object or as a separate variable."
   }
 }
 

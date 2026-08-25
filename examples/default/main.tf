@@ -21,7 +21,7 @@ module "public_ip" {
   source  = "cloudnationhq/pip/azure"
   version = "~> 5.0"
 
-  configs = {
+  public_ips = {
     pub1 = {
       name                = module.naming.public_ip.name_unique
       location            = module.rg.groups.demo.location
