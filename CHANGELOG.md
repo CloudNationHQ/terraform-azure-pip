@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v5.0.0...v5.1.0) (2026-11-05)
+
+
+### Features
+
+* **deps:** bump github.com/klauspost/compress in /tests ([#69](https://github.com/CloudNationHQ/terraform-azure-pip/issues/69)) ([0aeef2d](https://github.com/CloudNationHQ/terraform-azure-pip/commit/0aeef2dfcd7008563da6894bf953672b0fed5c21))
+
 ## [5.0.0](https://github.com/CloudNationHQ/terraform-azure-pip/compare/v4.4.0...v5.0.0) (2026-08-25)
 
 
